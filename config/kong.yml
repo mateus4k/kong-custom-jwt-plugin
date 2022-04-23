@@ -1,6 +1,13 @@
-_format_version: "2.1"
+_format_version: '2.1'
 _transform: true
 
 services:
-  - name: example-service
-    url: https://mockbin.org
+  - name: mockbin
+    url: https://mockbin.org/request
+    plugins:
+      - name: custom-jwt
+        config:
+          secret: password
+    routes:
+      - paths:
+          - /
